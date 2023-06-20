@@ -2,10 +2,10 @@
 	const hideSomeDiscoverMoreElement = async () => {
 		(async function(){
 			if(!(window.location.href.match(/http[s]{0,1}:\/\/twitter.com\/[a-zA-Z0-9_]+\/status\/[0-9]+/)?.length)) return;
-	const cellInnerDivs = document.querySelector(`[data-testid="cellInnerDiv"] > div > div > div > [role="heading"]`)?.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.childNodes;
+	const cellInnerDivs = document.querySelector(`[data-testid="cellInnerDiv"] > div > div > div > [dir=ltr]`)?.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.childNodes;
 	if(!cellInnerDivs?.length) return;
   for(let i = 0;i < cellInnerDivs.length;i++){
-		if(cellInnerDivs[i].querySelectorAll('[data-testid="cellInnerDiv"] > div > div > div > [role="heading"]').length){
+		if(cellInnerDivs[i].querySelectorAll('[data-testid="cellInnerDiv"] > div > div > div > [dir=ltr]').length){
 			for(let j = cellInnerDivs.length - 1;i <= j;j--){
 				cellInnerDivs[j].hidden = "hidden"
 			}
